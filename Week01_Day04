@@ -1,0 +1,65 @@
+// Q.1
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{
+    int n;
+    cout<<"Enter first integer: ";
+    cin>>n;
+    int m;
+    cout<<"Enter second integer: ";
+    cin>>m;
+    cout<<"Addition: "<<n+m<<endl;
+    cout<<"Subtraction: "<<n-m<<endl;
+    cout<<"Multiplication: "<<n*m<<endl;
+    cout<<fixed<<setprecision(5)<<"Division: "<<static_cast<double>(n)/m<<endl;
+    cout<<"Modulus: "<<n%m;
+    
+}
+
+// Q.2
+
+#include <iostream>
+
+class Complex {
+private:
+    int real;
+    int imag;
+
+public:
+    Complex(int r = 0, int i = 0) : real(r), imag(i) {}
+
+    Complex operator+(const Complex& other) const {
+        return Complex(real + other.real, imag + other.imag);
+    }
+
+    Complex operator-(const Complex& other) const {
+        return Complex(real - other.real, imag - other.imag);
+    }
+
+    void display() const {
+        std::cout << real << " + " << imag << "i" << std::endl;
+    }
+};
+
+int main() {
+    Complex c1(3, 4);
+    Complex c2(1, 2);
+
+    std::cout << "Complex Number 1: ";
+    c1.display();
+
+    std::cout << "Complex Number 2: ";
+    c2.display();
+
+    Complex sum = c1 + c2;
+    std::cout << "Sum: ";
+    sum.display();
+
+    Complex diff = c1 - c2;
+    std::cout << "Difference: ";
+    diff.display();
+
+    return 0;
+}
